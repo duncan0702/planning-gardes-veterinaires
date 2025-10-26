@@ -1,0 +1,152 @@
+{
+  "janvier_2026": {
+    "date_debut": "2026-01-05",
+    "date_fin": "2026-02-08",
+    "stats": {
+      "Dr. Sarah": {
+        "premier_semaine": 3,
+        "premier_weekend": 2,
+        "rappelable_semaine": 3,
+        "deuxieme_weekend": 2
+      },
+      "Dr. Maxime": {
+        "premier_semaine": 3,
+        "premier_weekend": 0,
+        "rappelable_semaine": 2,
+        "deuxieme_weekend": 0
+      },
+      "Dr. Nicolas": {
+        "premier_semaine": 4,
+        "premier_weekend": 0,
+        "rappelable_semaine": 3,
+        "deuxieme_weekend": 0
+      },
+      "Dr. Laura": {
+        "premier_semaine": 2,
+        "premier_weekend": 0,
+        "rappelable_semaine": 3,
+        "deuxieme_weekend": 0
+      },
+      "Dr. Lauranne": {
+        "premier_semaine": 2,
+        "premier_weekend": 2,
+        "rappelable_semaine": 1,
+        "deuxieme_weekend": 0
+      },
+      "Dr. Isaure": {
+        "premier_semaine": 2,
+        "premier_weekend": 0,
+        "rappelable_semaine": 3,
+        "deuxieme_weekend": 2
+      },
+      "Dr. Olivier": {
+        "premier_semaine": 0,
+        "premier_weekend": 0,
+        "rappelable_semaine": 2,
+        "deuxieme_weekend": 0
+      },
+      "Dr. Julien": {
+        "premier_semaine": 4,
+        "premier_weekend": 2,
+        "rappelable_semaine": 2,
+        "deuxieme_weekend": 0
+      },
+      "Dr. Mélanie": {
+        "premier_semaine": 0,
+        "premier_weekend": 4,
+        "rappelable_semaine": 1,
+        "deuxieme_weekend": 2
+      },
+      "Dr. Timoty": {
+        "premier_semaine": 2,
+        "premier_weekend": 0,
+        "rappelable_semaine": 1,
+        "deuxieme_weekend": 2
+      },
+      "Dr. Malaurie": {
+        "premier_semaine": 3,
+        "premier_weekend": 0,
+        "rappelable_semaine": 4,
+        "deuxieme_weekend": 2
+      }
+    }
+  },
+  "Planning janvier 2026 - 5 semaines": {
+    "date_debut": "2026-01-05",
+    "date_fin": "2026-02-08",
+    "stats": {
+      "Dr. Timoty": {
+        "premier_semaine": 3,
+        "premier_weekend": 2,
+        "rappelable_semaine": 2,
+        "deuxieme_weekend": 0
+      },
+      "Dr. Olivier": {
+        "premier_semaine": 0,
+        "premier_weekend": 0,
+        "rappelable_semaine": 1,
+        "deuxieme_weekend": 0
+      },
+      "Dr. Nicolas": {
+        "premier_semaine": 2,
+        "premier_weekend": 0,
+        "rappelable_semaine": 3,
+        "deuxieme_weekend": 2
+      },
+      "Dr. Laura": {
+        "premier_semaine": 2,
+        "premier_weekend": 2,
+        "rappelable_semaine": 2,
+        "deuxieme_weekend": 2
+      },
+      "Dr. Malaurie": {
+        "premier_semaine": 3,
+        "premier_weekend": 2,
+        "rappelable_semaine": 0,
+        "deuxieme_weekend": 0
+      },
+      "Dr. Isaure": {
+        "premier_semaine": 2,
+        "premier_weekend": 2,
+        "rappelable_semaine": 1,
+        "deuxieme_weekend": 2
+      },
+      "Dr. Maxime": {
+        "premier_semaine": 2,
+        "premier_weekend": 0,
+        "rappelable_semaine": 2,
+        "deuxieme_weekend": 2
+      },
+      "Dr. Mélanie": {
+        "premier_semaine": 2,
+        "premier_weekend": 0,
+        "rappelable_semaine": 4,
+        "deuxieme_weekend": 0
+      },
+      "Dr. Dorra": {
+        "premier_semaine": 2,
+        "premier_weekend": 2,
+        "rappelable_semaine": 1,
+        "deuxieme_weekend": 2
+      },
+      "Dr. Julien": {
+        "premier_semaine": 3,
+        "premier_weekend": 0,
+        "rappelable_semaine": 4,
+        "deuxieme_weekend": 0
+      },
+      "Dr. Lauranne": {
+        "premier_semaine": 3,
+        "premier_weekend": 0,
+        "rappelable_semaine": 2,
+        "deuxieme_weekend": 0
+      },
+      "Dr. Sarah": {
+        "premier_semaine": 1,
+        "premier_weekend": 0,
+        "rappelable_semaine": 3,
+        "deuxieme_weekend": 0
+      }
+    }
+  }
+}

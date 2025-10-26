@@ -1,0 +1,67 @@
+{
+  "periode": {
+    "date_debut": "2026-01-05",
+    "date_fin": "2026-02-08",
+    "description": "Planning janvier 2026 - 5 semaines"
+  },
+  
+  "veterinaires": {
+    "Dr. Julien": {
+      "jour_repos": [1, 3],
+      "conges": []
+    },
+    "Dr. Maxime": {
+      "jour_repos": 2,
+      "conges": ["2026-01-13"]
+    },
+    "Dr. Isaure": {
+      "jour_repos": 4,
+      "conges": ["2026-01-13"]
+    },
+    "Dr. Mélanie": {
+      "jour_repos": 2,
+      "conges": []
+    },
+    "Dr. Nicolas": {
+      "jour_repos": 3,
+      "conges": []
+    },
+    "Dr. Timoty": {
+      "jour_repos": [3, 4],
+      "conges": []
+    },
+    "Dr. Laura": {
+      "jour_repos": 0,
+      "conges": []
+    },
+    "Dr. Lauranne": {
+      "jour_repos": 4,
+      "conges": []
+    },
+    "Dr. Malaurie": {
+      "jour_repos": 1,
+      "conges": []
+    },
+    "Dr. Sarah": {
+      "jour_repos": 1,
+      "conges": []
+    },
+    "Dr. Olivier": {
+      "jour_repos": [2],
+      "conges": []
+    },
+    "Dr. Dorra": {
+      "jour_repos": [1, 2, 3],
+      "conges": []
+    }
+  },
+  
+  "notes": {
+    "jours_semaine": "0=Lundi, 1=Mardi, 2=Mercredi, 3=Jeudi, 4=Vendredi, 5=Samedi, 6=Dimanche",
+    "format_conges": "Formats acceptés:",
+    "format_date_unique": "YYYY-MM-DD (ex: '2026-01-15')",
+    "format_periode": "YYYY-MM-DD:YYYY-MM-DD (ex: '2026-01-15:2026-01-28')",
+    "format_mixte": "Vous pouvez mélanger les deux formats dans la même liste",
+    "exemple_mixte": ["2026-01-15:2026-01-20", "2026-02-05", "2026-03-10:2026-03-15"]
+  }
+}
