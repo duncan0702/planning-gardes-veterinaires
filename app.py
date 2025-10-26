@@ -71,17 +71,65 @@ default_vets = {
 if 'veterinaires' not in st.session_state:
     st.session_state.veterinaires = default_vets.copy()
 
-# Option pour ajouter des congés
+# Option pour ajouter des congés (optionnel)
 with st.sidebar.expander("➕ Ajouter des congés"):
     vet_conge = st.selectbox("Vétérinaire", list(st.session_state.veterinaires.keys()))
-    date_conge = st.date_input("Date de congé", key="date_conge_input")
     
-    if st.button("Ajouter ce congé"):
-        conge_str = date_conge.strftime('%Y-%m-%d')
-        if conge_str not in st.session_state.veterinaires[vet_conge]['conges']:
-            st.session_state.veterinaires[vet_conge]['conges'].append(conge_str)
-            st.success(f"✅ Congé ajouté pour {vet_conge} le {conge_str}")
-            st.rerun()
+    # Choix : 1 jour ou période
+    type_conge = st.radio(
+        "Type de congé",
+        ["1 jour", "Période (plusieurs jours)"],
+        horizontal=True
+    )
+    
+    if type_conge == "1 jour":
+        # Mode simple : 1 seule date
+        date_conge = st.date_input("Date de congé", key="date_conge_input")
+        
+        if st.button("Ajouter ce congé"):
+            conge_str = date_conge.strftime('%Y-%m-%d')
+            if conge_str not in st.session_state.veterinaires[vet_conge]['conges']:
+                st.session_state.veterinaires[vet_conge]['conges'].append(conge_str)
+                st.success(f"✅ Congé ajouté pour {vet_conge} le {conge_str}")
+                st.rerun()
+            else:
+                st.warning("⚠️ Ce congé existe déjà")
+    
+    else:
+        # Mode période : date début + date fin
+        col_date1, col_date2 = st.columns(2)
+        
+        with col_date1:
+            date_debut = st.date_input("Date de début", key="date_debut_conge")
+        
+        with col_date2:
+            date_fin = st.date_input("Date de fin", key="date_fin_conge")
+        
+        # Vérifier que date_debut <= date_fin
+        if date_debut > date_fin:
+            st.error("❌ La date de début doit être avant la date de fin")
+        else:
+            # Afficher le nombre de jours
+            nb_jours = (date_fin - date_debut).days + 1
+            st.info(f"📅 Période de {nb_jours} jour(s)")
+            
+            if st.button("Ajouter cette période"):
+                # Générer toutes les dates entre début et fin
+                conges_ajoutes = 0
+                current_date = date_debut
+                
+                while current_date <= date_fin:
+                    conge_str = current_date.strftime('%Y-%m-%d')
+                    if conge_str not in st.session_state.veterinaires[vet_conge]['conges']:
+                        st.session_state.veterinaires[vet_conge]['conges'].append(conge_str)
+                        conges_ajoutes += 1
+                    current_date += timedelta(days=1)
+                
+                if conges_ajoutes > 0:
+                    st.success(f"✅ {conges_ajoutes} jour(s) de congé ajouté(s) pour {vet_conge}")
+                    st.rerun()
+                else:
+                    st.warning("⚠️ Tous ces congés existent déjà")
 
 # Afficher les congés actuels
 with st.sidebar.expander("📋 Congés enregistrés"):
@@ -396,3 +444,4 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
+
