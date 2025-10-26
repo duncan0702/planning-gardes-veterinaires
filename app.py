@@ -161,11 +161,33 @@ st.sidebar.markdown("---")
 
 # Section 3 : Historique
 st.sidebar.subheader("📚 Historique")
-if st.sidebar.button("🗑️ Effacer l'historique"):
-    if st.sidebar.checkbox("Confirmer la suppression"):
-        history.clear()
-        st.sidebar.success("✅ Historique effacé")
+
+# Bouton pour demander la confirmation
+if 'confirm_delete_history' not in st.session_state:
+    st.session_state.confirm_delete_history = False
+
+if not st.session_state.confirm_delete_history:
+    # État initial : afficher le bouton principal
+    if st.sidebar.button("🗑️ Effacer l'historique", key="btn_delete_history"):
+        st.session_state.confirm_delete_history = True
         st.rerun()
+else:
+    # État de confirmation : afficher les options
+    st.sidebar.warning("⚠️ Êtes-vous sûr de vouloir effacer tout l'historique ?")
+    
+    col1, col2 = st.sidebar.columns(2)
+    
+    with col1:
+        if st.button("✅ Oui, effacer", key="btn_confirm_yes", use_container_width=True):
+            history.clear()
+            st.session_state.confirm_delete_history = False
+            st.sidebar.success("✅ Historique effacé !")
+            st.rerun()
+    
+    with col2:
+        if st.button("❌ Annuler", key="btn_confirm_no", use_container_width=True):
+            st.session_state.confirm_delete_history = False
+            st.rerun()
 
 # Zone principale
 tab1, tab2, tab3 = st.tabs(["🎯 Générer Planning", "📊 Historique", "ℹ️ Aide"])
@@ -321,6 +343,17 @@ with tab2:
         # Afficher l'historique
         for period_name, period_data in history.history.items():
             with st.expander(f"📅 {period_name} ({period_data['date_debut']} → {period_data['date_fin']})"):
+
+                # Bouton pour supprimer CE planning spécifique
+                if st.button(f"🗑️ Supprimer ce planning", key=f"del_period_{period_name}"):
+                    # Supprimer du dictionnaire
+                    del history.history[period_name]
+                    # Sauvegarder
+                    history.save()
+                    st.success(f"✅ Planning '{period_name}' supprimé")
+                    st.rerun()
+                
+                st.markdown("---")
                 
                 # Créer un DataFrame pour les stats
                 stats_list = []
@@ -444,4 +477,5 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
+
 
